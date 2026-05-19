@@ -1,3 +1,44 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/******************** PLACEHOLDER VALUES ARE SUBJECT TO CHANGE VIA STUDENT/MENTOR CONTRIBUTION ********************/
+/* If you pick up a task involving these placeholders, remember to remove/edit/move these to avoid CSS conflicts. */
+.nav_placeholder,
+.guesses_placeholder,
+.keyboard_placeholder,
+.footer_placeholder {
+    border: solid black 2px;
+}
+
+.nav_placeholder {
+    height: 60px;
+}
+
+.guesses_placeholder {
+    /* The letter grid (guesses) is in progess by student: Cooper */
+    width: 300px;
+    height: 360px;
+    margin: 10px;
+}
+
+.keyboard_placeholder {
+    width: 500px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.footer_placeholder {
+    /* The letter grid (guesses) is in progess by student: Heather */
+}
+/******************** PLACEHOLDER VALUES ARE SUBJECT TO CHANGE VIA STUDENT/MENTOR CONTRIBUTION ********************/
