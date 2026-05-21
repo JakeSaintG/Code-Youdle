@@ -7,11 +7,21 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <h1>Code-Youdle</h1>
+            <!-- No alt tag on the below imgs? This image is considered non-interactive since it's inside of the link/buttom. 
+            aria-hidden causes assistive techniologies to skip over it. The image is not essential to functionality. -->
+            <a href="https://github.com/JakeSaintG/Code-Youdle" target="_blank" aria-label="New tab; Link out to Code-Youdle Github repo.">
+                <img class="nav_img" src="./img/github-brands-solid-full.svg" aria-hidden="true">
+            </a>
+            <button aria-label="toggle between light and dark mode" onclick="console.log('light/dark toggle not yet implemented')">
+                <img class="nav_img" src="./img/moon-solid-full.svg" aria-hidden="true">
+            </button>
+        </nav>
+    </header>
     <!-- TODO: Accessibility -->
     <!-- NOTE! These placeholders are subject to change from student/mentor contribution -->
-    <header>
-        <nav class="nav_placeholder"></nav>
-    </header>
     <main>
         <div class="guesses_placeholder"></div>
         <div class="keyboard_placeholder"></div>
