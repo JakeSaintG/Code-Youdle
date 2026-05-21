@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body {
@@ -12,6 +13,43 @@ main {
     align-items: center;
 }
 
+nav {
+    border-bottom: solid black 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 1rem;
+}
+
+nav button {
+    background-color: inherit;
+    border-color: none;
+    border-style: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+nav button:active img {
+    /* Invert to make it white, use sepia to turn it yellow, and then crank up the saturation to make it MORE yellow. */
+    filter: invert() sepia() saturate(7);
+}
+
+h1 {
+    margin: 0;
+    padding-top: 7px;
+    flex-grow: 2;
+}
+
+.nav_img {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    /* filter: invert() */
+}
+
 /******************** PLACEHOLDER VALUES ARE SUBJECT TO CHANGE VIA STUDENT/MENTOR CONTRIBUTION ********************/
 /* If you pick up a task involving these placeholders, remember to remove/edit/move these to avoid CSS conflicts. */
 .nav_placeholder,
@@ -19,10 +57,6 @@ main {
 .keyboard_placeholder,
 .footer_placeholder {
     border: solid black 2px;
-}
-
-.nav_placeholder {
-    height: 60px;
 }
 
 .guesses_placeholder {
@@ -42,3 +76,41 @@ main {
     /* The letter grid (guesses) is in progess by student: Heather */
 }
 /******************** PLACEHOLDER VALUES ARE SUBJECT TO CHANGE VIA STUDENT/MENTOR CONTRIBUTION ********************/
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    nav {
+        border-bottom: solid white 1px;
+        background-color: black;
+        color: white;
+    }
+
+    .nav_img {
+        /* SVG is black but it can be inverted to make it white on the black background */
+        filter: invert();
+    }
+}
+
+/* Desktop - medium */
+@media (min-width: 780px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "github_link code_youdle dark_mode_toggle"
+    }
+
+    nav button {
+        grid-area: dark_mode_toggle;
+        justify-self: right;
+    }
+    
+    h1 {
+        grid-area: code_youdle;
+        justify-self: center;
+    }
+    
+    nav a {
+        grid-area: github_link;
+        justify-self: left;
+    }
+}
