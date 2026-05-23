@@ -20,6 +20,7 @@ nav {
     align-items: center;
     height: 60px;
     padding: 0 1rem;
+    gap: 10px;
 }
 
 nav button {
@@ -43,6 +44,8 @@ h1 {
 }
 
 .nav_img {
+    position:relative;
+    z-index: 1;
     height: 50px;
     width: 50px;
     display: flex;
@@ -57,6 +60,80 @@ h1 {
 .keyboard_placeholder,
 .footer_placeholder {
     border: solid black 2px;
+}
+
+/*The Modal is in progress by student: Shawn */
+.overlay {
+position: fixed;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.2s;
+z-index: 100;
+}
+
+.overlay.open {
+opacity: 1;
+pointer-events: all;
+}
+
+.blurred {
+filter: blur(4px);
+opacity: 0.6;
+transition: filter 0.25s, opacity 0.25s;
+}
+
+/* Credits button in nav */
+button[aria-label="Open credits modal"] {
+background: none;
+border: 1px solid currentColor;
+color: inherit;
+padding: 6px 14px;
+border-radius: 6px;
+cursor: pointer;
+font-size: 14px;
+}
+
+button[aria-label="Open credits modal"]:hover {
+background: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal box back ground styling */
+.modal {
+background: rgb(202, 199, 199);
+padding: 2rem;
+border-radius: 10px;
+max-width: 400px;
+width: 90%;
+text-align: center;
+}
+
+.modal h2 {
+margin-bottom: 1rem;
+}
+
+.modal p {
+margin-bottom: 0.5rem;
+font-size: 14px;
+}
+
+/* Closing button inside modal */
+button[aria-label="Close credits modal"] {
+margin-top: 1rem;
+padding: 6px 16px;
+border: none;
+background: #333;
+color: white;
+border-radius: 6px;
+cursor: pointer;
+font-size: 14px;
+}
+
+button[aria-label="Close credits modal"]:hover {
+background: #555;
 }
 
 .guesses_placeholder {
@@ -95,22 +172,27 @@ h1 {
 @media (min-width: 780px) {
     nav {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "github_link code_youdle dark_mode_toggle"
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "github_link code_youdle dark_mode_toggle credits_btn";
     }
 
-    nav button {
-        grid-area: dark_mode_toggle;
-        justify-self: right;
+    nav a {
+        grid-area: github_link;
+        justify-self: left;
     }
-    
+
     h1 {
         grid-area: code_youdle;
         justify-self: center;
     }
-    
-    nav a {
-        grid-area: github_link;
-        justify-self: left;
+
+    nav button[aria-label="toggle between light and dark mode"] {
+        grid-area: dark_mode_toggle;
+        justify-self: right;
+    }
+
+    button[aria-label="Open credits modal"] {
+        grid-area: credits_btn;
+        justify-self: right;
     }
 }
