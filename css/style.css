@@ -23,7 +23,7 @@ nav {
     gap: 10px;
 }
 
-nav button {
+nav button:not(#credits-btn) {
     background-color: inherit;
     border-color: none;
     border-style: none;
@@ -87,7 +87,7 @@ transition: filter 0.25s, opacity 0.25s;
 }
 
 /* Credits button in nav */
-button[aria-label="Open credits modal"] {
+#credits-open-btn  {
 background: none;
 border: 1px solid currentColor;
 color: inherit;
@@ -97,7 +97,7 @@ cursor: pointer;
 font-size: 14px;
 }
 
-button[aria-label="Open credits modal"]:hover {
+#credits-open-btn:hover {
 background: rgba(255, 255, 255, 0.1);
 }
 
@@ -121,7 +121,7 @@ font-size: 14px;
 }
 
 /* Closing button inside modal */
-button[aria-label="Close credits modal"] {
+#credits-close-btn {
 margin-top: 1rem;
 padding: 6px 16px;
 border: none;
@@ -132,7 +132,7 @@ cursor: pointer;
 font-size: 14px;
 }
 
-button[aria-label="Close credits modal"]:hover {
+#credits-close-btn:hover {
 background: #555;
 }
 
@@ -191,7 +191,7 @@ background: #555;
         justify-self: right;
     }
 
-    button[aria-label="Open credits modal"] {
+    #credits-btn {
         grid-area: credits_btn;
         justify-self: right;
     }

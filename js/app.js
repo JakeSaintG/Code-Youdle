@@ -1,7 +1,8 @@
-document.querySelector('button[aria-label="Open credits modal"]')
+// After
+document.getElementById('credits-btn')
   .addEventListener('click', openModal);
 
-document.querySelector('button[aria-label="Close credits modal"]')
+document.getElementById('credits-close-btn')
   .addEventListener('click', closeModal);
 
 document.getElementById('overlay')
