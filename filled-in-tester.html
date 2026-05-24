@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-Youdle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Code-Youdle</h1>
+            <!-- No alt tag on the below imgs? This image is considered non-interactive since it's inside of the link/buttom. 
+            aria-hidden causes assistive techniologies to skip over it. The image is not essential to functionality. -->
+            <a href="https://github.com/JakeSaintG/Code-Youdle" target="_blank" aria-label="New tab; Link out to Code-Youdle Github repo.">
+                <img class="nav_img" src="./img/github-brands-solid-full.svg" aria-hidden="true">
+            </a>
+            <button aria-label="toggle between light and dark mode" onclick="console.log('light/dark toggle not yet implemented')">
+                <img class="nav_img" src="./img/moon-solid-full.svg" aria-hidden="true">
+            </button>
+        </nav>
+    </header>
+    <!-- TODO: Accessibility -->
+    <!-- NOTE! These placeholders are subject to change from student/mentor contribution -->
+    <main>
+       
+        <div class="guesses_placeholder">
+            <div class="word-row" id="row-1">
+                <div class="box row-1 wrong" id="box-1">A</div>
+                <div class="box row-1 wrong" id="box-2">X</div>
+                <div class="box row-1 wrong" id="box-3">I</div>
+                <div class="box row-1 wrong" id="box-4">O</div>
+                <div class="box row-1 wrong" id="box-5">M</div>
+            </div>
+            <div class="word-row" id="row-2">
+                <div class="box row-2 wrong" id="box-6">Y</div>
+                <div class="box row-2 wrong" id="box-7">O</div>
+                <div class="box row-2 right-place" id="box-8">U</div>
+                <div class="box row-2 right-letter" id="box-9">N</div>
+                <div class="box row-2 wrong" id="box-"10>G</div>
+            </div>
+            <div class="word-row" id="row-3">
+                <div class="box row-3 right-letter" id="box-11">R</div>
+                <div class="box row-3 wrong" id="box-12">I</div>
+                <div class="box row-3 wrong" id="box-13">V</div>
+                <div class="box row-3 wrong" id="box-14">E</div>
+                <div class="box row-3 right-letter" id="box-15">R</div>
+            </div>
+            <div class="word-row" id="row-4">
+                <div class="box row-4 wrong" id="box-16">S</div>
+                <div class="box row-4 right-letter" id="box-17">U</div>
+                <div class="box row-4 right-letter" id="box-18">R</div>
+                <div class="box row-4 wrong" id="box-19">G</div>
+                <div class="box row-4 wrong" id="box-"20>E</div>
+            </div>
+            <div class="word-row" id="row-5">
+                <div class="box row-5 wrong" id="box-21">B</div>
+                <div class="box row-5 wrong" id="box-22">L</div>
+                <div class="box row-5 right-place" id="box-23">U</div>
+                <div class="box row-5 right-place" id="box-24">R</div>
+                <div class="box row-5 wrong" id="box-25">T</div>
+            </div>
+            <div class="word-row" id="row-6">
+                <div class="box row-6 right-place" id="box-26">C</div>
+                <div class="box row-6 right-place" id="box-27">H</div>
+                <div class="box row-6 right-place" id="box-28">U</div>
+                <div class="box row-6 right-place" id="box-29">R</div>
+                <div class="box row-6 right-place" id="box-30">N</div>
+            </div>
+        </div>
+       
+        <div class="keyboard_placeholder"></div>
+    
+    </main>
+
+    <footer class="footer_placeholder"></footer>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
