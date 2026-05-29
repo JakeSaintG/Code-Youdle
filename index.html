@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <h1>Code-Youdle</h1>
+            <h1 onclick="openModal()">Code-Youdle</h1>
             <!-- No alt tag on the below imgs? This image is considered non-interactive since it's inside of the link/buttom. 
             aria-hidden causes assistive techniologies to skip over it. The image is not essential to functionality. -->
             <a href="https://github.com/JakeSaintG/Code-Youdle" target="_blank"
@@ -21,10 +21,6 @@
             <button aria-label="toggle between light and dark mode"
                 onclick="console.log('light/dark toggle not yet implemented')">
                 <img class="nav_img" src="./img/moon-solid-full.svg" aria-hidden="true">
-            </button>
-            <!-- Start of the Modal Credits -->
-            <button id="credits-btn" onclick="openModal()">
-                Credits
             </button>
         </nav>
     </header>
@@ -48,7 +44,7 @@
     </main>
 
     <footer class="footer_placeholder"></footer>
-    <script type="module" src="js/app.js"></script>
+   <script src="js/app.js"></script> 
 </body>
 
 </html>
