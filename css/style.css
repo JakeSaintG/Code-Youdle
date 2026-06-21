@@ -3,6 +3,13 @@
     font-family: sans-serif;
 }
 
+:root {
+    --text_color_dark: #090A0A;
+    --text_color_light: #FFFFFF;
+    --button_base_color_light: #D3D6DA;
+    --button_base_color_dark: #818384;
+}
+
 body {
     margin: 0;
 }
@@ -128,11 +135,34 @@ h1 {
     background: #555;
 }
 
-.keyboard {
+#keyboard {
     width: 500px;
     height: 200px;
     margin-bottom: 10px;
-    border: solid black 2px;
+}
+
+.keyboard_key {
+    gap: .5rem;
+    height: 60px;
+    width: 45px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+}
+
+.keyboard_row {
+    margin: .5rem 0;
+    gap: .5rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.key_enter,
+.key_🠰 {
+    width: 70px;
+    font-size: 1rem;
 }
 
 .guesses_placeholder,
