@@ -1,24 +1,64 @@
 function openModal() {
-  document.getElementById('overlay').classList.add('open');
+	document.getElementById('overlay').classList.add('open');
 
-  const nav = document.querySelector('nav');
-  const main = document.querySelector('main');
+	const nav = document.querySelector('nav');
+	const main = document.querySelector('main');
 
-  if (nav) nav.classList.add('blurred');
-  if (main) main.classList.add('blurred');
+	if (nav) nav.classList.add('blurred');
+	if (main) main.classList.add('blurred');
 }
 
 function closeModal() {
-  document.getElementById('overlay').classList.remove('open');
+	document.getElementById('overlay').classList.remove('open');
 
-  const nav = document.querySelector('nav');
-  const main = document.querySelector('main');
+	const nav = document.querySelector('nav');
+	const main = document.querySelector('main');
 
-  if (nav) nav.classList.remove('blurred');
-  if (main) main.classList.remove('blurred');
+	if (nav) nav.classList.remove('blurred');
+	if (main) main.classList.remove('blurred');
 }
 
 function handleOverlayClick(e) {
-  if (e.target === document.getElementById('overlay')) closeModal();
+	if (e.target === document.getElementById('overlay')) closeModal();
 }
 
+function handleKeyboardButtonClick(event) {
+	// handle ENTER
+	// handle BACK (🠰)
+	const keyPressed = event.target.dataset['key'];
+	throw `${keyPressed} action not yet implemented`;
+}
+
+// Populate Keyboard
+(() => {
+	const keyboardContainer = document.getElementById('keyboard');
+
+	const keyboardKeys = {
+		top: ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+		middle: ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+		bottom: ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '🠰']
+	};
+
+	Object.keys(keyboardKeys).forEach((row) => {
+		const characters = keyboardKeys[row];
+		const rowContainer = document.createElement('div');
+		rowContainer.classList.add(`keyboard_row`);
+
+		characters.forEach((c) => {
+			const keyButton = document.createElement('button');
+			keyButton.classList.add('keyboard_key');
+			keyButton.classList.add(`key_${c.toLowerCase()}`);
+			keyButton.type = 'button';
+			keyButton.ariaLabel = `add ${c}`;
+			keyButton.innerText = c;
+			keyButton.onclick = handleKeyboardButtonClick;
+
+			// Adds a "data-key" attribute to the html element. Might be useful later.
+			keyButton.dataset.key = c;
+
+			rowContainer.append(keyButton);
+		});
+
+		keyboardContainer.append(rowContainer);
+	});
+})();
