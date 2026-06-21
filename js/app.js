@@ -1,17 +1,3 @@
-// After
-// document.getElementById('credits-btn')
-//   .addEventListener('click', openModal);
-
-// document.getElementById('credits-close-btn')
-//   .addEventListener('click', closeModal);
-
-// document.getElementById('overlay')
-//   .addEventListener('click', handleOverlayClick);
-
-// document.addEventListener('keydown', function(e) {
-//   if (e.key === 'Escape') closeModal();
-// });
-
 function openModal() {
   document.getElementById('overlay').classList.add('open');
 
