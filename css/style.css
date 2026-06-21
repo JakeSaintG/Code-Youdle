@@ -53,16 +53,6 @@ h1 {
     /* filter: invert() */
 }
 
-/******************** PLACEHOLDER VALUES ARE SUBJECT TO CHANGE VIA STUDENT/MENTOR CONTRIBUTION ********************/
-/* If you pick up a task involving these placeholders, remember to remove/edit/move these to avoid CSS conflicts. */
-.nav_placeholder,
-.guesses_placeholder,
-.keyboard_placeholder,
-.footer_placeholder {
-    border: solid black 2px;
-}
-
-/*The Modal is in progress by student: Shawn */
 .overlay {
     position: fixed;
     inset: 0;
@@ -138,68 +128,12 @@ h1 {
     background: #555;
 }
 
-.guesses_placeholder {
-    /* The letter grid (guesses) is in progess by student: Cooper */
-    width: 300px;
-    height: 310px;
-    margin: 10px;
-}
-
-.keyboard_placeholder {
+.keyboard {
     width: 500px;
     height: 200px;
     margin-bottom: 10px;
+    border: solid black 2px;
 }
-
-.footer_placeholder {
-    /* The letter grid (guesses) is in progess by student: Heather */
-}
-/******************** PLACEHOLDER VALUES ARE SUBJECT TO CHANGE VIA STUDENT/MENTOR CONTRIBUTION ********************/
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-    nav {
-        border-bottom: solid white 1px;
-        background-color: black;
-        color: white;
-    }
-
-    .nav_img {
-        /* SVG is black but it can be inverted to make it white on the black background */
-        filter: invert();
-    }
-}
-
-/* Desktop - medium */
-@media (min-width: 780px) {
-    nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-areas: "github_link code_youdle dark_mode_toggle credits_btn";
-    }
-
-    nav a {
-        grid-area: github_link;
-        justify-self: left;
-    }
-
-    h1 {
-        grid-area: code_youdle;
-        justify-self: center;
-    }
-
-    nav button[aria-label="toggle between light and dark mode"] {
-        grid-area: dark_mode_toggle;
-        justify-self: right;
-    }
-
-    #credits-btn {
-        grid-area: credits_btn;
-        justify-self: right;
-    }
-}
-
-/* Word Grid CSS */
 
 .guesses_placeholder,
 .word-row,
@@ -257,3 +191,61 @@ h1 {
 /* #box-1 {
   transform: perspective(100px) rotateX(45deg);
 } */
+
+/******************** PLACEHOLDER VALUES ARE SUBJECT TO CHANGE VIA STUDENT/MENTOR CONTRIBUTION ********************/
+/* If you pick up a task involving these placeholders, remember to remove/edit/move these to avoid CSS conflicts. */
+.nav_placeholder,
+.guesses_placeholder,
+.footer_placeholder {
+    border: solid black 2px;
+}
+
+.guesses_placeholder {
+    /* The letter grid (guesses) is in progess by student: Cooper */
+    width: 300px;
+    height: 310px;
+    margin: 10px;
+}
+
+.footer_placeholder {
+    /* The letter grid (guesses) is in progess by student: Heather */
+}
+/******************** PLACEHOLDER VALUES ARE SUBJECT TO CHANGE VIA STUDENT/MENTOR CONTRIBUTION ********************/
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    nav {
+        border-bottom: solid white 1px;
+        background-color: black;
+        color: white;
+    }
+
+    .nav_img {
+        /* SVG is black but it can be inverted to make it white on the black background */
+        filter: invert();
+    }
+}
+
+/* Desktop - medium */
+@media (min-width: 780px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "github_link code_youdle dark_mode_toggle";
+    }
+
+    nav a {
+        grid-area: github_link;
+        justify-self: left;
+    }
+
+    h1 {
+        grid-area: code_youdle;
+        justify-self: center;
+    }
+
+    nav button[aria-label="toggle between light and dark mode"] {
+        grid-area: dark_mode_toggle;
+        justify-self: right;
+    }
+}
