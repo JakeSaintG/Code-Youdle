@@ -26,6 +26,21 @@ function handleKeyboardButtonClick(event) {
 	// handle ENTER
 	// handle BACK (🠰)
 	const keyPressed = event.target.dataset['key'];
+	
+	// randomly assign correct place/letter or incorrect for debug purposes
+	event.target.classList = `keyboard_key key_${keyPressed}`; //reset the classes for the key FOR DEBUG (maybe not the best plan for the full implementation)
+	const debugColor = Math.random();
+	if (debugColor < 0.3) {
+		event.target.classList.add('correct_place');
+		console.log('green')
+	} else if (debugColor < 0.6 && debugColor > 0.3 ) {
+		event.target.classList.add('incorrect'); 
+		console.log('grey')
+	} else {
+		event.target.classList.add('correct_letter'); 
+		console.log('yellow')
+	}
+
 	throw `${keyPressed} action not yet implemented`;
 }
 

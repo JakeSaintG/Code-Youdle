@@ -6,6 +6,11 @@
 :root {
     --text_color_dark: #090A0A;
     --text_color_light: #FFFFFF;
+
+    --correct_letter: darkgoldenrod;
+    --correct_place: darkgreen;
+    --wrong: slategray;
+
     --button_base_color_light: #D3D6DA;
     --button_base_color_dark: #818384;
 }
@@ -46,7 +51,6 @@ nav button:active img {
 
 h1 {
     margin: 0;
-    padding-top: 7px;
     flex-grow: 2;
 }
 
@@ -148,7 +152,24 @@ h1 {
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 5px;
-    color: black;
+    color: var(--text_color_dark);
+    border: none;
+    background-color: var(--button_base_color_light);
+}
+
+.keyboard_key.correct_place {
+    color: var(--text_color_light);
+    background-color: var(--correct_place);
+}
+
+.keyboard_key.correct_letter {
+    color: var(--text_color_light);
+    background-color: var(--correct_letter);
+}
+
+.keyboard_key.incorrect {
+    color: var(--text_color_light);
+    background-color: var(--wrong);
 }
 
 .keyboard_row {
@@ -165,15 +186,18 @@ h1 {
     font-size: 1rem;
 }
 
-.guesses_placeholder,
+.guesses,
 .word-row,
 .box {
     box-sizing: border-box;
     /* important for layout for font size to be in this rule */
     font-size: xx-large;
+    width: 300px;
+    height: 310px;
+    margin: 10px;
 }
 
-.guesses_placeholder {
+.guesses {
     margin: 0.3em auto;
     max-width: 10em;
 }
@@ -208,15 +232,15 @@ h1 {
 }
 
 .right-place {
-    background-color: darkgreen;
+    background-color: var(--correct_place);
 }
 
 .right-letter {
-    background-color: darkgoldenrod;
+    background-color: var(--correct_letter);
 }
 
 .wrong {
-    background-color: slategray;
+    background-color: var(--wrong);
 }
 /* #box-1 {
   transform: perspective(100px) rotateX(45deg);
@@ -225,16 +249,8 @@ h1 {
 /******************** PLACEHOLDER VALUES ARE SUBJECT TO CHANGE VIA STUDENT/MENTOR CONTRIBUTION ********************/
 /* If you pick up a task involving these placeholders, remember to remove/edit/move these to avoid CSS conflicts. */
 .nav_placeholder,
-.guesses_placeholder,
 .footer_placeholder {
     border: solid black 2px;
-}
-
-.guesses_placeholder {
-    /* The letter grid (guesses) is in progess by student: Cooper */
-    width: 300px;
-    height: 310px;
-    margin: 10px;
 }
 
 .footer_placeholder {
@@ -244,15 +260,28 @@ h1 {
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-    nav {
-        border-bottom: solid white 1px;
+    body,
+    nav{
         background-color: black;
         color: white;
+    }
+
+    nav {
+        border-bottom: solid white 1px;
+    }
+
+    .box {
+        border: solid white 1px;
     }
 
     .nav_img {
         /* SVG is black but it can be inverted to make it white on the black background */
         filter: invert();
+    }
+
+    .keyboard_key {
+        background-color: var(--button_base_color_dark);
+        color: var(--text_color_light);
     }
 }
 
